@@ -6,25 +6,25 @@ using namespace std;
 
 
 void solve(){
-      int n,x;
-      bool f=false;
-      cin>> n;
-      int arr[n];
-      for(int i=0; i<n;i++){
-        cin>> arr[i];
-      }
-      cin>>x;
-
-      for(int i=0; i<n;i++){
-        if(x==arr[i]){
-            cout<<i;
-            f=true;
-            break;
+      char s;
+        cin>>s;
+        int n;
+        cin >> n;
+        int A[n];
+        for (int i = 0; i < n; i++)
+        {
+            cin >> A[i];
         }
-      }
-      if(!f){
-        cout<<-1;
-      }
+       
+       
+       
+        for (int i = 0; i < n; i++) {
+            for(int j=0;j<A[i];j++){
+                cout<<s;
+            }
+
+            cout<<endl;
+        }
 }
 
 
