@@ -6,26 +6,25 @@ using namespace std;
 
 
 void solve(){
-      double x, y;
-        cin >> x >> y;
-        if (x == 0 && y == 0) {
-            cout << "Origem" << "\n";
-        } else if (x == 0) {
-            cout << "Eixo Y" << "\n";
-        } else if (y == 0) {
-            cout << "Eixo X" << "\n";
-        } else {
-            if (x > 0 && y > 0) {
-                cout << "Q1" << "\n";
-            } else if (x < 0 && y > 0) {
-                cout << "Q2" << "\n";
-            } else if (x < 0 && y < 0) {
-                cout << "Q3" << "\n";
-            } else {
-                cout << "Q4" << "\n";
-            }
+      int n,x;
+      bool f=false;
+      cin>> n;
+      int arr[n];
+      for(int i=0; i<n;i++){
+        cin>> arr[i];
+      }
+      cin>>x;
+
+      for(int i=0; i<n;i++){
+        if(x==arr[i]){
+            cout<<i;
+            f=true;
+            break;
         }
-    
+      }
+      if(!f){
+        cout<<-1;
+      }
 }
 
 
