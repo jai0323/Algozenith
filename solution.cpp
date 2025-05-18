@@ -6,25 +6,40 @@ using namespace std;
 
 
 void solve(){
-      char s;
-        cin>>s;
-        int n;
+      
+       int n;
         cin >> n;
-        int A[n];
+        int jumps = n-1;
+        int print=1;
         for (int i = 0; i < n; i++)
         {
-            cin >> A[i];
-        }
-       
-       
-       
-        for (int i = 0; i < n; i++) {
-            for(int j=0;j<A[i];j++){
-                cout<<s;
-            }
+            for(int j = 0; j < jumps; j++)
+                cout<<" ";
+            for(int k = 0; k < print; k++)
+                cout<<"*";
 
+                
+            print+=2;
+            jumps--;
             cout<<endl;
         }
+       
+       jumps = 0;
+       print-=2;
+   
+       for (int i = 0; i < n; i++)
+        {
+            for(int j = 0; j < jumps; j++)
+                cout<<" ";
+            for(int k = 0; k < print; k++)
+                cout<<"*";
+
+            
+            print-=2;
+            jumps++;
+            cout<<endl;
+        }
+       
 }
 
 
