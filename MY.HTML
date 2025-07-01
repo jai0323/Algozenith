@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peace Studies MCQs</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; }
+    .question { background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; padding: 15px; }
+    .question h3 { margin: 0 0 10px; }
+    .question p { margin: 0; }
+    button { margin-top: 10px; padding: 6px 10px; background: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .correct { color: green; margin-top: 10px; display: none; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Peace Studies Multiple Choice Questions</h1>
+  <div id="quiz"></div>
+  
+  <script>
+    const questions = [
+  // Chapter 1: Origins of International Organization -- League of Nations to UN
+  // World War I Section
+  { q: "What event triggered the start of World War I?", options: ["Invasion of Poland", "Bombing of Pearl Harbor", "Assassination of Archduke Franz Ferdinand", "Fall of the Berlin Wall"], answer: 2 },
+  { q: "Which of the following was NOT a major cause of World War I?", options: ["Imperialism", "Nationalism", "Environmental Issues", "Alliance Systems"], answer: 2 },
+  { q: "The Treaty of Versailles was signed in which year?", options: ["1914", "1918", "1919", "1920"], answer: 2 },
+  { q: "Which warfare tactic was commonly used during World War I?", options: ["Blitzkrieg", "Trench Warfare", "Guerrilla Warfare", "Cyber Warfare"], answer: 1 },
+  { q: "Which war is known as 'The Great War'?", options: ["World War II", "Cold War", "World War I", "Napoleonic War"], answer: 2 },
+
+  // League of Nations Section
+  { q: "Where was the League of Nations headquartered?", options: ["New York", "Paris", "London", "Geneva"], answer: 3 },
+  { q: "Why did the United States not join the League of Nations?", options: ["They were not invited", "Senate refused to ratify participation", "They joined the UN instead", "They were not affected by WWI"], answer: 1 },
+  { q: "Which of the following was a success of the League of Nations?", options: ["Preventing World War II", "Solving the Åland Islands dispute", "Stopping the Cold War", "Ending the Vietnam War"], answer: 1 },
+  { q: "Which two events showed the League's failure to act effectively?", options: ["Manchurian Crisis and Italy's invasion of Ethiopia", "Cuban Missile Crisis and Korean War", "Fall of the Soviet Union and Gulf War", "Invasion of Iraq and Syrian Civil War"], answer: 0 },
+  { q: "In which year was the League of Nations dissolved?", options: ["1939", "1945", "1946", "1950"], answer: 2 },
+  { q: "The League of Nations led to the formation of which stronger international organization?", options: ["NATO", "European Union", "United Nations", "World Trade Organization"], answer: 2 },
+  { q: "What was a major reason for the League's weakness?", options: ["Lack of funding", "Small membership", "No enforcement power", "Too much military power"], answer: 2 },
+
+  // Chapter 2: UN - Foundations, Charter, and Organs
+  // Factual Questions
+  { q: "When was the United Nations officially established?", options: ["June 26, 1945", "October 24, 1945", "September 1, 1939", "April 25, 1945"], answer: 1 },
+  { q: "Where was the UN Charter signed?", options: ["Geneva", "Paris", "San Francisco", "New York"], answer: 2 },
+  { q: "Which of the following countries is NOT a permanent member of the UN Security Council?", options: ["China", "Germany", "Russia", "France"], answer: 1 },
+  { q: "What is the primary responsibility of the Security Council?", options: ["Protecting human rights", "Supervising elections", "Maintaining international peace and security", "Creating economic policies"], answer: 2 },
+  { q: "How many total members are there in the UN Security Council?", options: ["10", "15", "20", "50"], answer: 1 },
+  { q: "Who heads the UN Secretariat?", options: ["President", "Prime Minister", "Secretary-General", "Judge"], answer: 2 },
+  { q: "Which UN organ is responsible for legal disputes between countries?", options: ["ECOSOC", "General Assembly", "Security Council", "International Court of Justice"], answer: 3 },
+  { q: "What major global conflict led to the creation of the United Nations?", options: ["World War I", "Cold War", "World War II", "Korean War"], answer: 2 },
+  { q: "What does ECOSOC focus on?", options: ["Military operations", "Economic and social issues", "Legal disputes", "Peacekeeping missions"], answer: 1 },
+  { q: "Which UN organ is now inactive but was originally created to supervise trust territories?", options: ["Trusteeship Council", "Security Council", "Secretariat", "ICJ"], answer: 0 },
+
+  // Thinking-Based/Conceptual Questions
+  { q: "Why did the League of Nations fail, leading to the formation of the UN?", options: ["It was too powerful", "It lacked participation from major powers", "It had too many members", "It only focused on trade"], answer: 1 },
+  { q: "How does the veto power of permanent members affect the Security Council's decisions?", options: ["It makes decisions faster", "It allows decisions to be made without consensus", "It can block any resolution, even if most members agree", "It increases voting equality"], answer: 2 },
+  { q: "Why is the UN Charter considered a living document?", options: ["It changes every year", "It adapts to global changes while keeping core principles", "It has no fixed rules", "It is different for each country"], answer: 1 },
+  { q: "Why is October 24 celebrated as UN Day?", options: ["It marks the end of World War I", "It is the date of the first General Assembly", "It marks the coming into force of the UN Charter", "It celebrates peace between US and Russia"], answer: 2 },
+
+  // Chapter 3: United Nations and Peacekeeping
+  { q: "What is the main aim of UN Peacekeeping operations?", options: ["To punish countries involved in war", "To expand UN control over countries", "To help countries maintain or achieve peace after conflict", "To support military dictatorships"], answer: 2 },
+  { q: "Which principle is NOT a core principle of UN Peacekeeping?", options: ["Consent of the parties", "Use of force for political goals", "Impartiality", "Non-use of force except in self-defense"], answer: 1 },
+  { q: "UNAMIR was a peacekeeping mission in which country?", options: ["Kosovo", "Sierra Leone", "Rwanda", "Afghanistan"], answer: 2 },
+  { q: "Which of the following was a success in terms of UN Peacekeeping helping end a civil war?", options: ["UNAMIR", "UNAMSIL", "UNMIK", "UNIFIL"], answer: 1 },
+  { q: "The 'Action for Peacekeeping' (A4P) initiative was launched in:", options: ["2000", "2010", "2018", "2022"], answer: 2 },
+  { q: "What was the main lesson from the failure of UNAMIR in Rwanda?", options: ["Peacekeeping is unnecessary", "Peacekeepers should carry weapons always", "UN needs faster and stronger responses during crises", "UN should not enter African countries"], answer: 2 },
+  { q: "India's contribution to UN Peacekeeping is known for:", options: ["Political pressure", "Refusal to follow orders", "Large troop contributions and humanitarian work", "Air force domination"], answer: 2 },
+  { q: "Peacebuilding mainly focuses on:", options: ["Sending troops into a warzone", "Providing weapons to both sides", "Rebuilding institutions and ensuring lasting peace", "Imposing martial law"], answer: 2 },
+  { q: "Which of the following is a difference between peacekeeping and peacebuilding?", options: ["Peacekeeping happens after peacebuilding", "Peacekeeping focuses on long-term development", "Peacebuilding prevents conflict recurrence; peacekeeping monitors peace", "Peacebuilding involves only military action"], answer: 2 },
+  { q: "UNMIK was established to administer which region?", options: ["South Sudan", "Bosnia", "Kosovo", "Palestine"], answer: 2 },
+
+  // Chapter 4: Agenda for Peace (1992)
+  { q: "Who authored the 'Agenda for Peace'?", options: ["Kofi Annan", "António Guterres", "Boutros Boutros-Ghali", "Ban Ki-moon"], answer: 2 },
+  { q: "In which year was the 'Agenda for Peace' published?", options: ["1989", "1992", "1995", "2000"], answer: 1 },
+  { q: "What was the primary objective of the Agenda for Peace?", options: ["Promoting economic development", "Regulating arms trade", "Strengthening global conflict resolution mechanisms", "Establishing global governance"], answer: 2 },
+  { q: "Which of the following is NOT a core component of the Agenda for Peace?", options: ["Preventive Diplomacy", "Peacemaking", "Arms proliferation", "Post-conflict Peacebuilding"], answer: 2 },
+  { q: "What does Preventive Diplomacy aim to do?", options: ["Enforce peace through military action", "Intervene after a war has ended", "Prevent disputes from escalating into conflict", "Provide financial aid during war"], answer: 2 },
+  { q: "Peacekeeping operations under the Agenda involve all of the following EXCEPT:", options: ["Monitoring ceasefires", "Supporting political transitions", "Promoting economic sanctions", "Protecting civilians"], answer: 2 },
+  { q: "Which of these elements focuses on long-term stability after a conflict ends?", options: ["Peacemaking", "Peacekeeping", "Preventive diplomacy", "Post-conflict peacebuilding"], answer: 3 },
+  { q: "Why is cooperation with regional organizations emphasized in the Agenda for Peace?", options: ["To transfer UN power to local bodies", "To avoid direct UN involvement", "To leverage local expertise and resources", "To reduce UN financial burden"], answer: 2 },
+  { q: "Humanitarian assistance in the Agenda includes all EXCEPT:", options: ["Food and shelter", "Weapon supply", "Healthcare", "Protection of displaced persons"], answer: 1 },
+  { q: "The 'Agenda for Peace' is a response to which global development?", options: ["World War II", "Cold War", "Vietnam War", "Gulf War"], answer: 1 },
+
+  // Chapter 5: Peacebuilding to Sustaining Peace
+  { q: "What marks the shift from peacebuilding to sustaining peace?", options: ["A focus on military strength", "A move from short-term to long-term strategies", "Increased use of sanctions", "Ignoring root causes of conflict"], answer: 1 },
+  { q: "Sustaining peace emphasizes which of the following?", options: ["Only post-conflict activities", "Reactive policies", "Prevention and resilience at all stages of conflict", "Isolated peacekeeping missions"], answer: 2 },
+  { q: "Inclusive and participatory processes in sustaining peace aim to:", options: ["Reduce military budgets", "Centralize decision-making", "Exclude external actors", "Empower local communities and marginalized groups"], answer: 3 },
+  { q: "Which of the following is NOT a feature of sustaining peace?", options: ["Short-term reconstruction focus", "Inclusive participation", "Long-term commitment", "Integrated efforts across sectors"], answer: 0 },
+  { q: "What are the key drivers of conflict that sustaining peace seeks to address?", options: ["Internet usage and globalization", "Population growth and tourism", "Poverty, inequality, and exclusion", "Scientific advancement"], answer: 2 },
+  { q: "The Universal Declaration of Human Rights was adopted in:", options: ["1945", "1950", "1948", "1961"], answer: 2 },
+  { q: "Which of the following is TRUE about sustaining peace?", options: ["It ignores human rights as a core element.", "It treats peace and development as separate goals.", "It requires long-term political and financial commitment.", "It discourages community participation."], answer: 2 },
+  { q: "Which principle is NOT part of human rights?", options: ["Dignity", "Discrimination", "Equality", "Non-discrimination"], answer: 1 },
+
+  // Chapter 6: Human Rights
+  { q: "Which year was the Universal Declaration of Human Rights (UDHR) adopted?", options: ["1945", "1948", "1951", "1965"], answer: 1 },
+  { q: "Which two covenants form the International Bill of Human Rights along with the UDHR?", options: ["CEDAW and CRC", "ICCPR and ICESCR", "Geneva Convention and ICCPR", "CRC and ICESCR"], answer: 1 },
+  { q: "Which of the following is a civil and political right?", options: ["Right to health", "Right to vote", "Right to work", "Right to education"], answer: 1 },
+  { q: "What is the function of the Human Rights Council?", options: ["Organize elections", "Settle land disputes", "Promote and protect human rights globally", "Enforce environmental laws"], answer: 2 },
+  { q: "When is Human Rights Day observed?", options: ["26 January", "15 August", "10 December", "5 June"], answer: 2 },
+  { q: "The Human Rights Council replaced which body in 2006?", options: ["UNHCR", "UN Human Rights Commission", "ICC", "OHCHR"], answer: 1 },
+  { q: "Which of the following rights is covered under economic, social, and cultural rights?", options: ["Right to free speech", "Right to religion", "Right to fair trial", "Right to education"], answer: 3 },
+  { q: "Why was the UDHR adopted after World War II?", options: ["To punish Germany", "To create the UN", "To protect human dignity and prevent future atrocities", "To help colonies gain independence"], answer: 2 },
+  { q: "Which statement about human rights is NOT true?", options: ["Human rights apply to all people.", "Only governments are responsible for respecting human rights.", "Human rights include civil, political, economic, and cultural aspects.", "Violations can happen in both democratic and non-democratic countries."], answer: 1 },
+  { q: "The Universal Periodic Review (UPR) is...", options: ["A court that punishes human rights offenders", "A UN process to assess human rights in all countries", "A report on human trafficking", "A program to promote women's education"], answer: 1 },
+  { q: "Which of the following best explains the significance of the Human Rights Council?", options: ["It enforces criminal law globally.", "It builds schools in underdeveloped areas.", "It addresses human rights issues and emergencies globally.", "It gives loans to poor countries."], answer: 2 },
+  { q: "Which group is NOT specifically protected under any major UN human rights treaty?", options: ["Women", "Children", "Celebrities", "Persons with disabilities"], answer: 2 },
+  { q: "Why are economic and social rights sometimes harder to enforce than civil and political rights?", options: ["They are less important", "They require more resources and long-term government support", "They are not recognized by the UN", "They only apply to developing countries"], answer: 1 },
+  { q: "Which of the following is an example of a violation of civil and political rights?", options: ["A person denied access to school", "A country spying on private citizens without cause", "Lack of healthcare in a rural village", "Shortage of jobs"], answer: 1 },
+  { q: "In an authoritarian country, the government censors media and imprisons protestors. This is a violation of:", options: ["Economic rights", "Environmental rights", "Civil and political rights", "Cultural rights"], answer: 2 },
+  { q: "Which of the following is a challenge in protecting human rights in today's world?", options: ["Increased education", "Authoritarianism and digital surveillance", "Global cooperation", "Climate action"], answer: 1 },
+  { q: "The purpose of observing Human Rights Day is to:", options: ["Celebrate national heroes", "Highlight the success of the UN", "Reinforce the importance of global human rights for all", "Promote military cooperation"], answer: 2 },
+
+  // Chapter 7: Human Security
+  { q: "Which of the following best defines the concept of human security?", options: ["Protection of a nation's borders from foreign attacks", "Ensuring state sovereignty and national interests", "Protection of individuals from threats to their survival, livelihood, and dignity", "Deployment of military forces to maintain order"], answer: 2 },
+  { q: "Which report popularized the idea of human security globally?", options: ["UN Charter, 1945", "World Bank Report, 2001", "UNDP Human Development Report, 1994", "Geneva Conventions, 1949"], answer: 2 },
+  { q: "Which of the following is not one of the seven dimensions of human security proposed by the UNDP?", options: ["Economic security", "Political security", "Technological security", "Environmental security"], answer: 2 },
+  { q: "Human security shifts the focus of security from the state to the _____.", options: ["Government", "Community", "Individual", "Market"], answer: 2 },
+  { q: "Which dimension of human security deals with access to adequate and nutritious food?", options: ["Health security", "Environmental security", "Food security", "Economic security"], answer: 2 },
+  { q: "Why is human security considered important in post-conflict peacebuilding?", options: ["It helps increase military presence in the region.", "It focuses on border control and weapon stockpiling.", "It addresses root causes like inequality and promotes inclusion.", "It replaces development policies with political treaties."], answer: 2 },
+  { q: "Which of the following is a criticism of the human security approach?", options: ["It is too focused on military intervention.", "It ignores local populations.", "It is considered too vague and broad.", "It violates international law."], answer: 2 },
+  { q: "In the context of human security, what does 'freedom from want' primarily refer to?", options: ["Military protection from enemies", "Access to food, health, education, and shelter", "Freedom to vote and express opinion", "Protection from surveillance and state control"], answer: 1 },
+  { q: "Which of the following countries applied human security principles in post-conflict rebuilding?", options: ["North Korea", "Rwanda", "Syria", "United States"], answer: 1 },
+  { q: "Which dimension of human security aims to ensure protection of human rights and civil liberties?", options: ["Community security", "Political security", "Personal security", "Economic security"], answer: 1 },
+
+  // Chapter 8: Humanitarian Intervention
+  { q: "What is a key principle emphasized by the Responsibility to Protect (R2P) doctrine?", options: ["States have the sole right to intervene in other countries' affairs", "States must protect their populations from mass atrocities and the international community should assist if they fail", "Interventions must always be military in nature", "Sovereignty always overrides humanitarian concerns"], answer: 1 },
+  { q: "Which period saw the greatest limitation on humanitarian interventions due to superpower rivalry?", options: ["Post-World War II", "Cold War", "After Cold War", "Colonial era"], answer: 1 },
+  { q: "Which of the following is NOT a challenge of humanitarian intervention?", options: ["Respect for state sovereignty", "Geopolitical interests influencing decisions", "Preventing civilian casualties", "Immediate full resolution of root causes of conflict"], answer: 3 },
+  { q: "Which intervention is often criticized for causing regional instability and rise of armed militias after its operation?", options: ["Kosovo (1999)", "Libya (2011)", "East Timor (1999)", "Sierra Leone (1999)"], answer: 1 },
+  { q: "Why is humanitarian intervention controversial?", options: ["Because it always fails", "Because of questions about its legality, effectiveness, and motivations", "Because all countries agree on its necessity", "Because it only happens during peace"], answer: 1 },
+  { q: "Conceptual: Why might motivation for intervention be important in evaluating its legitimacy?", options: ["Only humanitarian motives are acceptable under international law", "Utilitarian ethics might accept interventions with national self-interest if the outcome is humanitarian", "Motivation has no relevance to the success of intervention", "Military motives are always more legitimate"], answer: 1 },
+  { q: "Conceptual: What is the major ethical dilemma between sovereignty and humanitarian intervention?", options: ["Sovereignty means external intervention is always justified", "Intervention can protect civilians but violates a country's sovereign rights", "Sovereignty is irrelevant in modern international law", "Humanitarian intervention never harms sovereignty"], answer: 1 },
+
+  // Chapter 9: Right to Peace as Group Rights
+  { q: "Why is the right to peace considered a group right rather than an individual right?", options: ["Because individuals cannot live peacefully alone", "Because peace requires society-wide cooperation", "Because individuals have no rights", "Because peace is only about government control"], answer: 1 },
+  { q: "Which of the following is NOT a way to promote the right to peace?", options: ["Prevention of war through diplomacy", "Arms control and disarmament", "Promoting inequality and discrimination", "Promoting tolerance and respect for diversity"], answer: 2 },
+  { q: "What was a major global event that laid the foundation for the right to peace after World War II?", options: ["The Cold War", "The Universal Declaration of Human Rights (1948)", "The Vietnam War", "The African Charter on Human and Peoples' Rights"], answer: 1 },
+  { q: "Which organization adopted the Declaration on the Right of Peoples to Peace in 1984?", options: ["NATO", "United Nations General Assembly", "African Union", "Amnesty International"], answer: 1 },
+  { q: "Which of the following is a major challenge to realizing the right to peace?", options: ["Global cooperation and mutual understanding", "Conflict of interests among states", "Education promoting peace", "Sustainable development efforts"], answer: 1 },
+  { q: "What role does education play in promoting the right to peace?", options: ["It spreads weapons knowledge", "It promotes a culture of peace and nonviolence", "It encourages conflict resolution by force", "It focuses only on economic development"], answer: 1 },
+  { q: "How does recognizing the right to peace as a group right affect international relations?", options: ["It increases military interventions", "It limits liability for aggressive actions by individuals only", "It strengthens the equality and cooperation among nations", "It removes responsibilities from states"], answer: 2 },
+  { q: "Why is sustainable development linked to the right to peace?", options: ["Because economic growth alone guarantees peace", "Because addressing inequality reduces the causes of conflict", "Because development causes environmental damage", "Because it only benefits certain groups"], answer: 1 },
+
+  // Chapter 10: Women, Peace, and Security (WPS)
+  { q: "What year was the UN Security Council Resolution 1325 on Women, Peace, and Security adopted?", options: ["1995", "2000", "2010", "2015"], answer: 1 },
+  { q: "Which UN department leads efforts to increase women's participation in peace processes?", options: ["Department of Economic and Social Affairs", "Department of Political and Peacebuilding Affairs (DPPA)", "UN Women", "Department of Peace Operations"], answer: 1 },
+  { q: "Which of the following is not one of the four pillars of Security Council Resolution 1325?", options: ["Women's role in conflict prevention", "Women's participation in peacebuilding", "Women's military training programs", "Protection of women's rights during and after conflict"], answer: 2 },
+  { q: "Why is including women in peace processes important?", options: ["Women demand more funding", "Women bring diverse perspectives that help build sustainable peace", "Women are the only victims of conflict", "It reduces the need for security forces"], answer: 1 },
+  { q: "What does 'gender' primarily refer to in the context of WPS?", options: ["Biological differences between men and women", "Social and cultural roles assigned to men and women", "The number of men and women in a population", "Laws related to women's rights"], answer: 1 },
+  { q: "Which of these best describes the DPPA's approach to implementing the WPS agenda?", options: ["It is the sole responsibility of gender advisers", "Gender is mainstreamed throughout all DPPA work, involving everyone", "Focus only on women's issues outside peace processes", "Only focus on preventing violence against women"], answer: 1 },
+  { q: "What new areas are included in the revised 2023 WPS Policy?", options: ["Digital technology and climate, peace, and security", "Only traditional peace negotiations", "Military strategies for women combatants", "Trade agreements involving women"], answer: 0 },
+  { q: "Which group has traditionally been seen as the main actors in conflict and peace processes?", options: ["Women activists and peacemakers", "Children and youth", "Men in armed groups and public decision-making roles", "Civil society organizations"], answer: 2 },
+
+  // Chapter 11: Youth, Peace, and Security (YPS)
+  { q: "In which year did the UN Security Council adopt Resolution 2250 on Youth, Peace, and Security?", options: ["2000", "2010", "2015", "2020"], answer: 2 },
+  { q: "Which of the following is not one of the five key pillars of the Youth, Peace, and Security agenda?", options: ["Participation", "Protection", "Prevention", "Military Training"], answer: 3 },
+  { q: "What is the main goal of the Youth, Peace, and Security agenda?", options: ["To restrict youth involvement in politics", "To increase young people's meaningful participation in peace and security decision-making", "To send youth to war zones", "To focus only on youth education"], answer: 1 },
+  { q: "Which UN office works with DPPA and UNFPA to support the Youth, Peace, and Security agenda?", options: ["UN Women", "Peacebuilding Support Office (PBSO)", "UNICEF", "World Health Organization (WHO)"], answer: 1 },
+  { q: "Which group led the advocacy for the adoption of Resolution 2250?", options: ["Military leaders", "Over 11,000 young people from more than 110 countries", "Government officials only", "Only peace negotiators"], answer: 1 },
+  { q: "Why does the YPS agenda emphasize 'disengagement and reintegration'?", options: ["To help youth leave armed groups and rejoin society", "To train youth for combat roles", "To encourage youth to avoid all peace activities", "To relocate youth to other countries"], answer: 0 },
+  { q: "What challenges faced by youth does the YPS agenda address?", options: ["Recruitment into armed groups", "Displacement and marginalization", "Limited access to education and jobs", "All of the above"], answer: 3 },
+  { q: "Which pillar of the YPS agenda focuses on working together with youth organizations?", options: ["Participation", "Protection", "Partnerships", "Prevention"], answer: 2 },
+
+  // Chapter 12: Entities in Peace Work
+  { q: "What is the primary role of UN peacekeepers (Blue Helmets)?", options: ["To impose government rule in conflict zones", "To maintain peace, protect civilians, and support political processes", "To conduct military operations for regime change", "To enforce international trade laws"], answer: 1 },
+  { q: "Which UN mission successfully disarmed over 100,000 combatants and supported elections before handing over security to national forces?", options: ["MINUSCA (Central African Republic)", "MONUSCO (Democratic Republic of the Congo)", "UNMIL (Liberia)", "UNMISS (South Sudan)"], answer: 2 },
+  { q: "What is SDG 16 primarily concerned with?", options: ["Economic growth", "Environmental protection", "Peace, justice, and strong institutions", "Education for all"], answer: 2 },
+  { q: "Why is increasing women's participation in peacekeeping missions important?", options: ["Women increase military strength", "Women can build trust with victims and reduce sexual violence", "Women can lead combat operations better", "Women prevent all conflicts from occurring"], answer: 1 },
+  { q: "Which country is noted for contributing the largest number of female peacekeepers?", options: ["South Africa", "Rwanda", "Kenya", "Nigeria"], answer: 1 },
+  { q: "What is the main purpose of early warning systems in peace work?", options: ["To increase military intervention", "To predict and prevent conflicts by identifying root causes like inequality and discrimination", "To organize peacekeeping troops", "To promote economic sanctions"], answer: 1 },
+  { q: "The Kinshasa Convention aims to:", options: ["Promote free trade in Africa", "Control and eradicate the illicit trade in small arms and light weapons", "Establish new peacekeeping missions", "Provide education to youth in conflict zones"], answer: 1 },
+  { q: "What was a key factor in the success of the UN's preventive engagement in Burkina Faso?", options: ["Heavy military intervention", "Unilateral decisions by the UN Security Council", "Neutrality, timely deployment, strong leadership, and regional partnerships", "Use of economic sanctions"], answer: 2 },
+  { q: "How does the presence of women peacekeepers improve the effectiveness of peacekeeping missions?", options: ["They replace male soldiers in combat roles", "They build trust with vulnerable groups, particularly women and children, improving information gathering and protection efforts", "They reduce the need for military force", "They handle only logistical tasks"], answer: 1 },
+  { q: "Why is controlling the illicit trade of small arms critical to sustaining peace?", options: ["It increases military power of the UN", "Weapons availability often leads to more violence and conflict", "It helps countries develop economically", "It is unrelated to peace and security"], answer: 1 },
+
+  // Chapter 12-2: UNESCO
+  { q: "When was UNESCO established?", options: ["1919", "1945", "1960", "1980"], answer: 1 },
+  { q: "What is the main objective of UNESCO?", options: ["To promote military peacekeeping", "To promote international collaboration in education, science, culture, and communication", "To provide humanitarian aid during disasters", "To govern international trade laws"], answer: 1 },
+  { q: "Which of the following does UNESCO protect?", options: ["Military bases", "World heritage sites", "National borders", "Stock markets"], answer: 1 },
+  { q: "How does UNESCO contribute to peacebuilding?", options: ["By deploying peacekeeping troops", "Through education, cultural understanding, and scientific cooperation", "By enforcing international law", "By mediating peace treaties"], answer: 1 },
+  { q: "Which Sustainable Development Goal (SDG) is closely linked with UNESCO's work?", options: ["SDG 2: Zero Hunger", "SDG 4: Quality Education", "SDG 7: Affordable and Clean Energy", "SDG 14: Life Below Water"], answer: 1 },
+  { q: "Why is promoting cultural diversity important for peace according to UNESCO?", options: ["It helps preserve tourist attractions.", "It encourages competition among nations.", "It fosters mutual respect and reduces conflicts based on misunderstandings.", "It enforces one culture over others."], answer: 2 },
+  { q: "How can education help in preventing conflicts?", options: ["By teaching military skills", "By promoting critical thinking, tolerance, and understanding of human rights", "By segregating students based on background", "By focusing only on national history"], answer: 1 },
+  { q: "What role does science play in UNESCO's peacebuilding efforts?", options: ["Developing weapons for defense", "Encouraging scientific research to solve global challenges and support sustainable development", "Restricting scientific knowledge to certain countries", "Focusing only on theoretical science"], answer: 1 },
+
+  // Chapter 14: UNESCO Chair at MIT-WPU
+  { q: "Who holds the UNESCO Chair at MIT-WPU for Peace, Human Rights, and Democracy?", options: ["Dr. APJ Abdul Kalam", "Prof. Dr. Vishwanath Karad", "Kofi Annan", "Dr. Raghuram Rajan"], answer: 1 },
+  { q: "What is the primary focus of the UNESCO Chair at MIT-WPU?", options: ["Engineering innovation", "Promoting peace, human rights, and democracy", "Scientific research", "Sports and fitness"], answer: 1 },
+  { q: "What makes this Chair unique in India?", options: ["It is led by a foreign professor", "It is the oldest of its kind in India", "It focuses only on law", "It is based on medical research"], answer: 1 },
+  { q: "Which of the following is not listed as a focus area of the Chair?", options: ["Interfaith Dialogue", "Space Exploration", "Democratic Governance", "Conflict Resolution"], answer: 1 },
+  { q: "The Chair encourages collaboration between:", options: ["Government and military", "Science, culture, education, and peace", "Sports, media, and business", "Only engineering and medicine"], answer: 1 },
+  { q: "Heritage Management under this Chair aims to:", options: ["Build new infrastructure", "Promote industrialization", "Preserve shared cultural spaces", "Replace traditional practices"], answer: 2 },
+  { q: "Which of the following is an initiative organized by the Chair?", options: ["Indian Science Congress", "Bhartiya Chhatra Sansad", "MIT-WPU Cricket League", "Annual Music Festival"], answer: 1 },
+  { q: "'Yoga for Peace' is an initiative aimed at:", options: ["Athletic competition", "Promoting spiritual and mental well-being", "Teaching yoga postures only", "Professional training for athletes"], answer: 1 },
+  { q: "Which student group is associated with blood donation and social service?", options: ["Photography Club", "Youth Red Cross", "NCC only", "Drama Club"], answer: 1 },
+  { q: "What is the role of the Sarpanch Parishad?", options: ["Promote inter-college fests", "Organize national elections", "Promote sustainable practices", "Conduct job placements"], answer: 2 },
+  { q: "Which club is related to expressive speech and communication?", options: ["GitHub Club", "Abhivyakti", "NSS", "NCC"], answer: 1 },
+  { q: "The Technocrat'18 and GitHub & GNU clubs mainly focus on:", options: ["Music", "Spirituality", "Technical skills and innovation", "Peacekeeping missions"], answer: 2 },
+  { q: "Which of the following reflects MIT-WPU's approach to education?", options: ["Sole focus on academics", "Only engineering training", "Holistic development through academics, social, and cultural activities", "Online-only programs"], answer: 2 },
+
+  // Chapter 15: United Nations Development Programme (UNDP)
+  
+
+  { q: "In which year was the UNDP established?", options: ["1945", "1965", "1980", "2000"], answer: 1 },
+{ q: "How many countries and territories does UNDP operate in?", options: ["Around 100", "Over 120", "Over 170", "Only in developing nations"], answer: 2 },
+{ q: "Which of the following is not a focus area of UNDP?", options: ["Poverty reduction", "Space exploration", "Gender equality", "Sustainable development"], answer: 1 },
+{ q: "What is UNDP's primary role in peacebuilding?", options: ["Military support", "Political campaigning", "Rebuilding governance and promoting social cohesion", "Building sports infrastructure"], answer: 2 },
+{ q: "The Human Development Index (HDI) measures:", options: ["Economic power only", "Internet access", "Life expectancy, education, and income", "Pollution control levels"], answer: 2 },
+{ q: "Which report is published annually by UNDP?", options: ["Sustainable Economy Digest", "World Population Report", "Human Development Report", "Global Peace Index"], answer: 2 },
+{ q: "During the COVID-19 pandemic, UNDP provided support in all the following areas except:", options: ["Health system strengthening", "Vaccine production", "Economic recovery", "Social protection"], answer: 1 },
+{ q: "What kind of development does UNDP promote through digital innovation labs and open data platforms?", options: ["Exclusive development", "Urban-centric growth", "Inclusive development", "Military advancements"], answer: 2 },
+{ q: "UNDP helps countries transition to:", options: ["High-pollution industrial economies", "Low-carbon, climate-resilient development", "Colonial models of development", "Import-based economies"], answer: 1 },
+{ q: "Which of the following is true about UNDP's gender equality initiatives?", options: ["Only focuses on men’s inclusion", "Does not support political participation", "Empowers women in politics, economy, education, and protection", "Operates only in Africa"], answer: 2 },
+{ q: "UNDP received the Nobel Peace Prize jointly with:", options: ["The WHO", "The World Bank", "The United Nations and Kofi Annan", "UNICEF"], answer: 2 },
+{ q: "UNDP gets funding from:", options: ["Private individuals only", "Only UN members", "Voluntary contributions from governments, institutions, and private sectors", "Taxation from member states"], answer: 2 },
+
+{ q: "When was UNHCR established?", options: ["1945", "1950", "1951", "1967"], answer: 1 },
+{ q: "What global event led to the formation of UNHCR?", options: ["Cold War", "World War II", "Korean War", "Vietnam War"], answer: 1 },
+{ q: "Which key document gave UNHCR a broader mandate?", options: ["Geneva Convention", "1951 Refugee Convention", "UN Charter", "Paris Agreement"], answer: 1 },
+{ q: "What did the 1967 Protocol do for UNHCR’s work?", options: ["Limited its work to Asia", "Focused on economic migrants", "Removed geographical restrictions", "Ended the refugee program"], answer: 2 },
+{ q: "What services does UNHCR provide to refugees?", options: ["Education and tourism", "Banking and loans", "Shelter, healthcare, and emergency relief", "Internet access and transport"], answer: 2 },
+{ q: "What are IDPs?", options: ["International Diplomatic Persons", "Internally Damaged Properties", "Internally Displaced Persons", "International Defence Providers"], answer: 2 },
+{ q: "How is UNHCR primarily funded?", options: ["Taxes from refugee camps", "UN membership fees", "Voluntary donations from member states", "Refugee application charges"], answer: 2 },
+{ q: "In how many countries does UNHCR operate?", options: ["Over 50", "Over 80", "Over 100", "Over 138"], answer: 3 },
+{ q: "What is the ProGres database used for?", options: ["Tracking climate change", "Monitoring nuclear threats", "Distributing aid using biometric data", "Recording peace treaties"], answer: 2 },
+{ q: "Which award is given by UNHCR to individuals/organizations for refugee work?", options: ["Gandhi Peace Prize", "Nansen Refugee Award", "UN Peace Award", "Global Refugee Medal"], answer: 1 },
+{ q: "How many times has UNHCR won the Nobel Peace Prize?", options: ["Once", "Twice", "Three times", "Never"], answer: 1 },
+{ q: "Which of the following is NOT an award received by UNHCR?", options: ["Indira Gandhi Prize", "Prince of Asturias Award", "Booker Prize", "Nobel Peace Prize"], answer: 2 },
+{ q: "What is the main mission of UNHCR?", options: ["Economic development", "Protecting the environment", "Providing protection and aid to refugees", "Conducting elections in conflict areas"], answer: 2 },
+{ q: "Which principle is NOT directly associated with UNHCR's mission?", options: ["Solidarity", "Compassion", "Human dignity", "Profit maximization"], answer: 3 },
+{ q: "What year did UNHCR receive the Indira Gandhi Prize?", options: ["1981", "1991", "2015", "2020"], answer: 2 },
+
+{ q: "What is the main strength of regional organizations in peacebuilding?", options: ["Their military power", "Their distance from conflict areas", "Their understanding of local context", "Their economic control"], answer: 2 },
+{ q: "Which of the following is NOT a role played by regional organizations in peacebuilding?", options: ["Promoting regional cooperation", "Providing nuclear weapons", "Supporting post-conflict recovery", "Mediating disputes"], answer: 1 },
+{ q: "Which of these is an example of a regional organization?", options: ["United Nations (UN)", "NATO", "African Union (AU)", "World Health Organization (WHO)"], answer: 2 },
+{ q: "Regional organizations contribute to peace by all of the following EXCEPT:", options: ["Providing a platform for dialogue", "Increasing environmental degradation", "Preventing conflict", "Promoting economic integration"], answer: 1 },
+{ q: "What type of approach do regional organizations use in peacebuilding?", options: ["Military-only approach", "One-size-fits-all strategy", "Multi-dimensional approach", "Individual country approach"], answer: 2 },
+{ q: "Which of the following regional organizations operates in Southeast Asia?", options: ["EU", "AU", "ASEAN", "OAS"], answer: 2 },
+{ q: "Regional organizations often collaborate with:", options: ["Private companies only", "Civil society, national governments, and international partners", "Tourists and travelers", "Entertainment industries"], answer: 1 },
+{ q: "What do regional organizations help reduce through negotiation and cooperation?", options: ["Literacy rates", "Trade", "Violent conflicts", "Tax revenue"], answer: 2 },
+{ q: "What kind of security threats do regional organizations help to tackle?", options: ["Inflation and taxes", "Terrorism and organized crime", "Sports disputes", "Traffic management"], answer: 1 },
+{ q: "Which of the following does NOT describe a benefit of regional organizations in peacebuilding?", options: ["Cultural sensitivity", "Faster response to crises", "Better local understanding", "Complete independence from international law"], answer: 3 },
+{ q: "Which regional organization works primarily in Europe?", options: ["ASEAN", "AU", "EU", "OAS"], answer: 2 },
+{ q: "What is one economic role of regional organizations in peacebuilding?", options: ["Increase inflation", "Promote economic integration", "Increase inequality", "End all trade"], answer: 1 },
+{ q: "How do regional organizations support post-conflict societies?", options: ["By ignoring them", "By rebuilding trust and supporting reconstruction", "By ending cooperation", "By sending only military troops"], answer: 1 },
+{ q: "What makes regional organizations faster in responding to local crises?", options: ["They are funded by the UN", "They use local police", "They are geographically close and understand local dynamics", "They have no rules"], answer: 2 },
+{ q: "What is one key goal of regional peacebuilding?", options: ["Increase borders", "Encourage war", "Promote sustainable development", "End trade agreements"], answer: 2 },
+
+{ q: "When was the Organization of American States (OAS) founded?", options: ["1919", "1948", "1951", "1965"], answer: 1 },
+{ q: "Where is the headquarters of the OAS located?", options: ["New York City", "Ottawa", "Washington, D.C.", "Mexico City"], answer: 2 },
+{ q: "How many member states are part of the OAS?", options: ["27", "50", "35", "40"], answer: 2 },
+{ q: "Which of the following is NOT a focus area of the OAS?", options: ["Democracy", "Human rights", "Space exploration", "Economic development"], answer: 2 },
+{ q: "What does the Inter-American Democratic Charter deal with?", options: ["Trade between countries", "Border disputes", "Defense of democracy", "Education reforms"], answer: 2 },
+{ q: "What specialized agency works under OAS for fighting drug abuse?", options: ["WHO", "UNODC", "Inter-American Drug Abuse Control Commission", "Red Cross"], answer: 2 },
+{ q: "The OAS helps protect human rights through which body?", options: ["UNICEF", "Inter-American Commission on Human Rights", "Human Rights Watch", "International Court of Justice"], answer: 1 },
+{ q: "Which country is NOT a member of the OAS?", options: ["Canada", "Brazil", "India", "Mexico"], answer: 2 },
+{ q: "What is one major challenge the OAS currently faces?", options: ["Lack of natural resources", "Political polarization and inequality", "Natural disasters in Europe", "Space warfare"], answer: 1 },
+{ q: "What is the role of the Inter-American Development Bank (IDB)?", options: ["Printing money", "Providing military support", "Financing development projects and reducing poverty", "Controlling oil prices"], answer: 2 },
+{ q: "The OAS promotes environmental protection through:", options: ["NASA", "Greenpeace", "IACNDR and IABIN", "WTO"], answer: 2 },
+{ q: "The Inter-American Cultural Council (CIC) works on:", options: ["Space programs", "Preserving cultural heritage", "Building roads", "Import/export regulations"], answer: 1 },
+{ q: "Which of the following is a goal of the OAS?", options: ["Promote war", "Support dictatorship", "Promote democracy and peace", "Increase trade barriers"], answer: 2 },
+{ q: "How does the OAS assist in elections?", options: ["By organizing campaigns", "By giving weapons to voters", "By monitoring elections to ensure fairness", "By cancelling elections"], answer: 2 },
+{ q: "What is the role of IACNDR?", options: ["Promote space research", "Control border patrol", "Manage natural disaster reduction", "Set tax rules"], answer: 2 },
+
+{ q: "When was the Organization of African Union (OAU) established?", options: ["1955", "1963", "1970", "1980"], answer: 1 },
+{ q: "Where is the headquarters of the OAU/AU located?", options: ["Nairobi, Kenya", "Cairo, Egypt", "Addis Ababa, Ethiopia", "Lagos, Nigeria"], answer: 2 },
+{ q: "Which of the following was NOT a primary goal of the OAU?", options: ["Promote African unity", "Support liberation movements", "Expand European colonial rule", "Fight apartheid and racial discrimination"], answer: 2 },
+{ q: "What replaced the OAU in 2002?", options: ["United Nations African Division", "African Union (AU)", "African Economic Community", "African Development Bank"], answer: 1 },
+{ q: "What key peace and security body was established under the AU?", options: ["Peacekeeping Forces Committee", "African Security Agency", "Peace and Security Council (PSC)", "African Defense Alliance"], answer: 2 },
+{ q: "Which of the following is an initiative under the AU aimed at economic integration?", options: ["NAFTA", "African Continental Free Trade Area (AfCFTA)", "ASEAN", "Mercosur"], answer: 1 },
+{ q: "What long-term socio-economic plan guides the AU’s development agenda?", options: ["Millennium Development Goals", "Agenda 2063", "Vision 2020", "Sustainable Development Goals"], answer: 1 },
+{ q: "Which AU initiative focuses on improving infrastructure across Africa?", options: ["PIDA (Programme for Infrastructure Development in Africa)", "NEPAD (New Partnership for Africa's Development)", "Both A and B", "None of the above"], answer: 2 },
+{ q: "The OAU provided support to liberation movements in which of the following countries?", options: ["South Africa and Namibia", "Zimbabwe and Angola", "Both a and b", "None of the above"], answer: 2 },
+{ q: "The African Union aims to address root causes of conflict such as:", options: ["Climate change only", "Poverty and inequality", "Space exploration", "Tourism development"], answer: 1 },
+
+{ q: "How many member states does the European Union currently have?", options: ["15", "27", "30", "50"], answer: 1 },
+{ q: "Where is the main administrative headquarters of the EU located?", options: ["Luxembourg", "Brussels", "Frankfurt", "Paris"], answer: 1 },
+{ q: "Which institution is located in Frankfurt, Germany?", options: ["European Parliament", "European Commission", "European Central Bank (ECB)", "European Court of Justice"], answer: 2 },
+{ q: "What was the precursor to the European Union?", options: ["NATO", "European Coal and Steel Community (ECSC)", "Warsaw Pact", "Schengen Area"], answer: 1 },
+{ q: "The European Single Market allows free movement of which of the following?", options: ["Goods and services only", "Goods, services, capital, and people", "Capital only", "People only"], answer: 1 },
+{ q: "What is the main goal of the European Green Deal?", options: ["Achieve climate neutrality by 2050", "Increase coal production", "Build more highways", "Expand the EU membership"], answer: 1 },
+{ q: "Which EU program supports student and professional exchanges?", options: ["Horizon Europe", "Erasmus+", "Creative Europe", "Digital Europe"], answer: 1 },
+{ q: "What does the EU’s Charter of Fundamental Rights primarily protect?", options: ["Economic policies", "Civil, political, economic, and social rights of EU citizens", "Military alliances", "Trade agreements"], answer: 1 },
+{ q: "Which EU fund supports development assistance to partner countries?", options: ["European Stability Mechanism", "European Development Fund (EDF)", "European Innovation Fund", "European Agricultural Fund"], answer: 1 },
+{ q: "The EU promotes global cooperation to implement which international agenda?", options: ["Paris Agreement only", "United Nations Sustainable Development Goals (SDGs)", "NATO Strategic Plan", "World Trade Organization agreements"], answer: 1 },
+
+{ q: "How many member states does SAARC have?", options: ["6", "8", "10", "12"], answer: 1 },
+{ q: "Where is the SAARC Secretariat located?", options: ["New Delhi, India", "Islamabad, Pakistan", "Kathmandu, Nepal", "Dhaka, Bangladesh"], answer: 2 },
+{ q: "Which two SAARC countries have longstanding bilateral disputes that affect regional cooperation?", options: ["Bangladesh and Bhutan", "India and Pakistan", "Maldives and Sri Lanka", "Nepal and Afghanistan"], answer: 1 },
+{ q: "What is SAFTA?", options: ["South Asian Free Trade Area", "South Asian Forum for Trade Advancement", "South Asia Financial Treaty Agreement", "South Asia Foreign Trade Alliance"], answer: 1 },
+{ q: "What major global crisis emphasized the need for stronger SAARC cooperation?", options: ["Global financial crisis", "COVID-19 pandemic", "Climate change", "Refugee crisis"], answer: 1 },
+{ q: "What is the primary role of the SAARC Secretariat?", options: ["To make all policy decisions for SAARC", "To coordinate implementation of member states’ decisions and manage operations", "To resolve all bilateral disputes among members", "To provide funding for all member countries"], answer: 1 },
+{ q: "Where is the SAARC University located?", options: ["Colombo, Sri Lanka", "New Delhi, India", "Islamabad, Pakistan", "Thimphu, Bhutan"], answer: 1 },
+{ q: "Which SAARC initiative focuses on economic development and poverty reduction?", options: ["SAFTA", "SAARC Development Fund (SDF)", "SAARC Cultural Exchange Program", "SAARC Peacekeeping Force"], answer: 1 },
+{ q: "What are some common challenges SAARC addresses regionally?", options: ["Space exploration and technology", "Terrorism, extremism, and organized crime", "Military alliances and defense treaties", "Oceanic trade and fisheries"], answer: 1 },
+{ q: "What is one of SAARC’s key methods to mitigate conflict?", options: ["Military intervention", "Promoting dialogue and diplomacy", "Economic sanctions", "Ignoring disputes"], answer: 1 },
+
+{ q: "When was ASEAN established?", options: ["1957", "1967", "1977", "1987"], answer: 1 },
+{ q: "How many member countries are in ASEAN?", options: ["8", "9", "10", "12"], answer: 2 },
+{ q: "Where is the ASEAN Secretariat located?", options: ["Bangkok, Thailand", "Manila, Philippines", "Jakarta, Indonesia", "Kuala Lumpur, Malaysia"], answer: 2 },
+{ q: "What is the ASEAN Economic Community (AEC) primarily designed to do?", options: ["Promote military alliances", "Create a single market and production base", "Establish a common currency", "Develop space exploration programs"], answer: 1 },
+{ q: "Which principle is ASEAN known for in managing member state relations?", options: ["Non-interference", "Military intervention", "Majority voting", "Unilateral decisions"], answer: 1 },
+{ q: "Which major regional security forums are associated with ASEAN?", options: ["ASEAN Regional Forum (ARF) and East Asia Summit (EAS)", "NATO and ASEAN Summit", "G7 and ARF", "BRICS and EAS"], answer: 1 },
+{ q: "ASEAN promotes peaceful resolution of territorial disputes in which area?", options: ["Himalayan region", "South China Sea", "Strait of Gibraltar", "Arctic Ocean"], answer: 1 },
+{ q: "What does ASEAN’s Code of Conduct (COC) in the South China Sea aim to do?", options: ["Expand territorial claims", "Prevent escalation of conflicts", "Establish military bases", "Promote tourism"], answer: 1 },
+{ q: "Which security threats does ASEAN actively address?", options: ["Cybercrime, terrorism, trafficking", "Space piracy", "Ocean pollution", "Global warming only"], answer: 1 },
+{ q: "Which of the following is a social and cultural initiative by ASEAN?", options: ["ASEAN Space Exploration Program", "ASEAN Cultural Heritage Award", "ASEAN Military Alliance", "ASEAN Nuclear Pact"], answer: 1 },
+
+{ q: "When was the G-20 established?", options: ["1989", "1999", "2009", "2019"], answer: 1 },
+{ q: "How many members does the G-20 have (including the EU)?", options: ["18", "19", "20", "21"], answer: 2 },
+{ q: "Which new member was added to the G-20 in 2023?", options: ["ASEAN", "African Union", "SAARC", "OPEC"], answer: 1 },
+{ q: "The G-20 primarily focuses on:", options: ["Military cooperation", "International economic cooperation", "Space exploration", "Cultural exchange"], answer: 1 },
+{ q: "Which major global event highlighted the G-20’s role as a crisis response forum?", options: ["COVID-19 pandemic", "2008-2009 global financial crisis", "2011 Japan earthquake", "2020 Australian bushfires"], answer: 1 },
+{ q: "What environmental agreement has the G-20 committed to supporting?", options: ["Kyoto Protocol", "Paris Agreement", "Montreal Protocol", "Rio Declaration"], answer: 1 },
+{ q: "How does the G-20 support global health governance?", options: ["By building hospitals worldwide", "By coordinating pandemic response and vaccine distribution", "By managing health insurance globally", "By running health awareness campaigns only"], answer: 1 },
+{ q: "Which organization’s reforms has the G-20 advocated for to address trade issues?", options: ["World Bank", "WTO (World Trade Organization)", "IMF", "UNDP"], answer: 1 },
+{ q: "What does the G-20 Financial Inclusion Action Plan aim to do?", options: ["Promote financial secrecy", "Expand access to financial services and reduce poverty", "Restrict financial transactions", "Eliminate digital banking"], answer: 1 },
+{ q: "In the digital economy, the G-20 focuses on all of the following except:", options: ["Digital infrastructure development", "Cybersecurity", "Digital taxation", "Space internet services"], answer: 1 },
+
+    
+];
+
+    const quizContainer = document.getElementById("quiz");
+
+    questions.forEach((q, idx) => {
+      const div = document.createElement("div");
+      div.className = "question";
+
+      const title = document.createElement("h3");
+      title.textContent = `Q${idx + 1}. ${q.q}`;
+      div.appendChild(title);
+
+      q.options.forEach((option, i) => {
+        const label = document.createElement("label");
+        label.innerHTML = `<input type='radio' name='q${idx}' value='${i}'> ${option}<br>`;
+        div.appendChild(label);
+      });
+
+      const btn = document.createElement("button");
+      btn.textContent = "Check Answer";
+      btn.onclick = () => {
+        const selected = div.querySelector(`input[name='q${idx}']:checked`);
+        if (selected && parseInt(selected.value) === q.answer) {
+          result.style.color = "green";
+          result.textContent = "Correct!";
+        } else {
+          result.style.color = "red";
+          result.textContent = `Wrong! Correct answer: ${q.options[q.answer]}`;
+        }
+        result.style.display = "block";
+      };
+      div.appendChild(btn);
+
+      const result = document.createElement("p");
+      result.className = "correct";
+      div.appendChild(result);
+
+      quizContainer.appendChild(div);
+    });
+  </script>
+</body>
+</html>

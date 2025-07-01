@@ -1,0 +1,27 @@
+<html>
+<head>
+</head>
+<body>
+<H1> S3 bucket takeover PoC by Jai Shobhit </H1>
+
+</body>
+</html>
+
+
+
+
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": [
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::ait.integrated.tools.ficoccs-dev.net/*"
+    }
+  ]
+}
