@@ -8,38 +8,19 @@ using namespace std;
 void solve(){
       
        int n;
-        cin >> n;
-        int jumps = n-1;
-        int print=1;
-        for (int i = 0; i < n; i++)
-        {
-            for(int j = 0; j < jumps; j++)
-                cout<<" ";
-            for(int k = 0; k < print; k++)
-                cout<<"*";
+       cin >> n;
+       int arr[n];
+       for(int i = 0; i < n; i++) cin >> arr[i];
 
-                
-            print+=2;
-            jumps--;
-            cout<<endl;
-        }
+       int ans  = 0, count = 1;
        
-       jumps = 0;
-       print-=2;
-   
-       for (int i = 0; i < n; i++)
-        {
-            for(int j = 0; j < jumps; j++)
-                cout<<" ";
-            for(int k = 0; k < print; k++)
-                cout<<"*";
+       for(int i = 1; i < n; i++){
+        if(arr[i]<arr[i-1]){
+            ans = i*(i+1)/2;
+        }
 
-            
-            print-=2;
-            jumps++;
-            cout<<endl;
-        }
-       
+    }
+    cout << ans << endl;
 }
 
 
