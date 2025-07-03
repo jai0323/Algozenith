@@ -7,20 +7,23 @@ using namespace std;
 
 void solve(){
       
-       int n;
-       cin >> n;
-       int arr[n];
-       for(int i = 0; i < n; i++) cin >> arr[i];
+    int  n;
+     cin >> n;
+    char a[n][n];
 
-       int ans  = 0, count = 1;
-       
-       for(int i = 1; i < n; i++){
-        if(arr[i]<arr[i-1]){
-            ans = i*(i+1)/2;
-        }
+    for(int i=0; i<n; i++)
+        for(int j=0;j<n; j++)
+            cin >> a[i][j];
 
-    }
-    cout << ans << endl;
+    int x,y;
+    cin >> x >> y;
+    
+
+    if(a[x][y-1]=='x' && a[x][y+1]=='x' && a[x+1][y+1]=='x' && a[x+1][y-1]=='x' && a[x-1][y-1]=='x' && a[x-1][y+1]=='x' && a[x-1][y]=='x' && a[x+1][y]=='x')
+     cout << "yes" << endl;
+    else
+     cout << "no" << endl;
+
 }
 
 
