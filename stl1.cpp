@@ -11,7 +11,7 @@ void solve(){
     for(int i = 0; i < 9; i++)
         cout<< arr[i] << "  ";
 
-    // we are sub arr from lower bound bcoz it return pointer of the index 
+    // we are subtracting arr from lower bound bcoz it return pointer of the index 
     cout << "\nlower bound position => " << lower_bound(arr, arr+9, 6) - arr << endl;
     cout << "\nupper bound position => " << upper_bound(arr, arr+9, 6) - arr << endl;
 }
