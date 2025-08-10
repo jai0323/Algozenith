@@ -1,34 +1,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int n, budget,q;
 
-   n=5;
-    vector<int> prices={5,3,7,2,10};
-  
-    sort(prices.begin(), prices.end());
+void solve(){
+     int n, budget;
+    cin >> n >> budget;
+    int prices[n];
+    for( int i=0; i<n; i++){
+     cin >> prices[i];
+    }
+    sort(prices, prices+n);
 
     int prefix[n+1]{0};
     for(int i=0; i<n; i++) {
         prefix[i+1] = prefix[i] + prices[i];
-
-        cout << prefix[i+1] << " ";
     }
 
-    cout << endl;
-    cin >> q;
+    auto index = upper_bound(prefix, prefix + n + 1, budget)-prefix;
+    cout<< index - 1  << endl;
+   
+}
 
-    
-    while(q--){
-        int budget;
-        cin >> budget;
+signed main() {
 
-        auto index = upper_bound(prefix, prefix + n + 1, budget)-prefix;
-        cout<<"index: " << index - 1  << endl;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
 
+    int _t=1;
+
+    cin >> _t;
+
+    while(_t--){
+        solve();
     }
-    
+   
 
     return 0;
 }
